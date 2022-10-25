@@ -1,1 +1,52 @@
 /* TODO */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: grid;
+    grid-template-columns: minmax(210px, 1fr) 4fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: 
+            "sidebar nav"
+            "sidebar main"
+    ;
+    border: 5px solid black;
+}
+nav {
+    grid-area: nav;
+}
+.sidebar {
+    background-color: #007bff;
+    grid-area: sidebar;
+    width: 100%;
+    height: 100vh;
+}
+.main {
+    background-color: aliceblue;
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+}
+
+
+
+
+/* SVGS */
+.avatar {
+    width: 75px;
+    height: auto;
+}
+.mag-glass,
+.bell {
+    height: auto;
+}
+
+.mag-glass {
+    width: 20px;
+}
+.bell {
+    width: 30px;
+}
