@@ -6,106 +6,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles.css">
     <script src="./assets/styles.js"></script>
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-    <title>Admin-Dashboard</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
-    <!-- TODO -->
-    <nav class="nav">
-        <div class="top-left">
-            <img id="mag-glass" src="./assets/images/magnify.svg" alt="search">
-            <div>
-                <input type="text" name="search">
+    <nav>
+        <div class="search">
+            <img src="./assets/images/magnify.svg" alt="Avatar">
+            <div id="searchBar">
+                <input type="text">
             </div>
         </div>
-        <div class="top-right">
-            <img id="bell" src="./assets/images/bell-ring.svg" alt="Notification Bell">
-            <img id="avatar-top" src="./assets/images/batman.webp">
-            <h1>Billy Bob</h1>
+        <div class="profileOptions">
+            <img src="./assets/images/bell-ring.svg" alt="Notifications">
+            <img id="avatarTop" src="./assets/images/batman.webp">
+            <h2>Billy Joel</h2>
         </div>
-        <div class="bottom-left">
-            <div class="avatar-container">
-                <img id="avatar-lrg" src="./assets/images/batman.webp" alt="User Avatar">
-                <div class="greeting">
-                    <p id="greet">Hi there,</p>
-                    <h1 id="greet-name">Billy Bob</h1>
-                </div>
+        <div class="displayName">
+            <img id="avatarBottom" src="./assets/images/batman.webp" alt="Avatar">
+            <div class="username">
+                <p>Hi there,</p>
+                <h2>Billy Joel</h2>
             </div>
         </div>
-        <div class="bottom-right">
-            <button name="new" id="new">New</button>
-            <button name="upload" id="upload">Upload</button>
-            <button name="share" id="share">Share</button>
+        <div class="buttons">
+            <button>New</button>
+            <button>Upload</button>
+            <button>Share</button>
         </div>
     </nav>
 
     <div class="sidebar">
-        <div class="title">
-            <img id="dashboard-img" src="./assets/images/view-dashboard.svg">
-            <h1>Dashboard</h1>
-        </div>
-        <div class="function-btns">
-
-            <div class="side-item">
-                <img class="side-icon" src="./assets/images/home.svg" alt="Home">
-                <h2>Home</h2>
-            </div>
-
-            <div class="side-item">
-                <img class="profile" src="./assets/images/card-account-details-outline.svg" alt="Profile">
-                <h2>Profile</h2>
-            </div>
-            <div class="side-item">
-                <img src="./assets/images/message.svg" alt="Messages">
-                <h2>Messages</h2>
-            </div>
-            <div class="side-item">
-                <img src="./assets/images/clock-time-three.svg" alt="Clock">
-                <h2>History</h2>
-            </div>
-            <div class="side-item">
-                <img src="./assets/images/note-multiple.svg" alt="Tasks">
-                <h2>Tasks</h2>
-            </div>
-            <div class="side-item">
-                <img src="./assets/images/account-group.svg" alt="Communities">
-                <h2>Communities</h2>
-            </div>
-
-        </div>
-        <div class="function-btns">
-            <div class="side-item">
-                <img src="./assets/images/cog.svg" alt="Gear">
-                <h2>Settings</h2>
-            </div>
-            <div class="side-item">
-                <img src="./assets/images/help-box.svg" alt="">
-                <h2>Support</h2>
-            </div>
-            <div class="side-item">
-                <img src="./assets/images/shield-check.svg" alt="Shield">
-                <h2>Privacy</h2>
-            </div>
-        </div>
-
+        <ul class="title">
+            <li>
+                <img class="sideTitleSVG" src="./assets/images/view-dashboard.svg" alt="Dashboard">
+                <span id="sideTitle">Dashboard</span>
+            </li>
+        </ul>
+        <ul class="userFunctions">
+            <li>
+                <img class="sideItemSVG" src="./assets/images/home.svg" alt="Home">
+                <span class="sideItem">Home</span>
+            </li>
+            <li>
+                <img class="sideItemSVG" src="./assets/images/card-account-details-outline.svg" alt="Account">
+                <span class="sideItem">Account</span>
+            </li>
+            <li>
+                <img class="sideItemSVG" src="./assets/images/message.svg" alt="Messages">
+                <span class="sideItem">Messages</span>
+            </li>
+            <li>
+                <img class="sideItemSVG" src="./assets/images/clock-time-three.svg" alt="History">
+                <span class="sideItem">History</span>
+            </li>
+            <li>
+                <img class="sideItemSVG" src="./assets/images/note-multiple.svg" alt="Task">
+                <span class="sideItem">Tasks</span>
+            </li>
+            <li>
+                <img class="sideItemSVG" src="./assets/images/account-group.svg" alt="Communities">
+                <span class="sideItem">Communities</span>
+            </li>
+        </ul>
+        <ul class="userSettings">
+            <li>
+                <img class="sideItemSVG" src="./assets/images/cog.svg" alt="Settings">
+                <span class="sideItem">Settings</span>
+            </li>
+            <li>
+                <img class="sideItemSVG" src="./assets/images/help-box.svg" alt="Support">
+                <span class="sideItem">Support</span>
+            </li>
+            <li>
+                <img class="sideItemSVG" src="./assets/images/shield-check.svg" alt="Privacy">
+                <span class="sideItem">Privacy</span>
+            </li>
+        </ul>
     </div>
 
     <div class="main">
-        <div class="article">
-            <!-- Your Projects -->
-            <div class="article-item">
-                <!-- title -->
-                <!-- body -->
+
+        <div class="projectContainer">
+            <h2>Your Projects</h2>
+            <div class="projects">
+                <div class="card">
+                    <div class="content">
+                        <h3>Super Cool Project</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta temporibus quae ratione molestias, minus maiores</p>
+                    </div>
+                    <div class="cardButtons">
+                        <img class="cardSVG" src="./assets/images/star-plus-outline.svg" alt="Star">
+                        <img class="cardSVG" src="./assets/images/eye-plus-outline.svg" alt="Eye">
+                        <img class="cardSVG" src="./assets/images/transit-connection-variant.svg" alt="Connect">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Super Cool Project</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta temporibus quae ratione molestias, minus maiores</p>
+                    </div>
+                    <div class="cardButtons">
+                        <img class="cardSVG" src="./assets/images/star-plus-outline.svg" alt="Star">
+                        <img class="cardSVG" src="./assets/images/eye-plus-outline.svg" alt="Eye">
+                        <img class="cardSVG" src="./assets/images/transit-connection-variant.svg" alt="Connect">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Super Cool Project</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta temporibus quae ratione molestias, minus maiores</p>
+                    </div>
+                    <div class="cardButtons">
+                        <img class="cardSVG" src="./assets/images/star-plus-outline.svg" alt="Star">
+                        <img class="cardSVG" src="./assets/images/eye-plus-outline.svg" alt="Eye">
+                        <img class="cardSVG" src="./assets/images/transit-connection-variant.svg" alt="Connect">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Super Cool Project</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta temporibus quae ratione molestias, minus maiores</p>
+                    </div>
+                    <div class="cardButtons">
+                        <img class="cardSVG" src="./assets/images/star-plus-outline.svg" alt="Star">
+                        <img class="cardSVG" src="./assets/images/eye-plus-outline.svg" alt="Eye">
+                        <img class="cardSVG" src="./assets/images/transit-connection-variant.svg" alt="Connect">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Super Cool Project</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta temporibus quae ratione molestias, minus maiores</p>
+                    </div>
+                    <div class="cardButtons">
+                        <img class="cardSVG" src="./assets/images/star-plus-outline.svg" alt="Star">
+                        <img class="cardSVG" src="./assets/images/eye-plus-outline.svg" alt="Eye">
+                        <img class="cardSVG" src="./assets/images/transit-connection-variant.svg" alt="Connect">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h3>Super Cool Project</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta temporibus quae ratione molestias, minus maiores</p>
+                    </div>
+                    <div class="cardButtons">
+                        <img class="cardSVG" src="./assets/images/star-plus-outline.svg" alt="Star">
+                        <img class="cardSVG" src="./assets/images/eye-plus-outline.svg" alt="Eye">
+                        <img class="cardSVG" src="./assets/images/transit-connection-variant.svg" alt="Connect">
+                    </div>
+                </div>
             </div>
-        </div>  
-        <div class="announcements">
-
         </div>
-        <div class="trending">
 
+        <div class="announcementsContainer">
+            <h2>Announcements</h2>
+            <div class="announcements">
+                <div class="mainSideItem">
+                    <h3>Site Maintenance</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sequi totam recusandae aperiam suscipit ipsum sunt. Accusantium porro amet</p>
+                </div>
+                <div class="mainSideItem">
+                    <h3>Community Share Day</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sequi totam recusandae aperiam suscipit ipsum sunt. Accusantium porro amet</p>
+                </div>
+                <div class="mainSideItem">
+                    <h3>Updated Privacy Policy</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sequi totam recusandae aperiam suscipit ipsum sunt. Accusantium porro amet</p>
+                </div>
+            </div>
         </div>
+        
+        <div class="trendingContainer">
+            <h2>Trending</h2>
+            <div class="trending">
+                <div class="trendingUser">
+                    <div class="trendingAvatar">
+                        <img src="./assets/images/boy-icon.png" alt="Trending Avatar">
+                    </div>
+                    <div class="trendingName">
+                        <p>@jerry12</p>
+                        <p>Jerry Prince Smith</p>
+                    </div>
+                </div>
+                <div class="trendingUser">
+                    <div class="trendingAvatar">
+                        <img src="./assets/images/boy2-icon.png" alt="Trending Avatar">
+                    </div>
+                    <div class="trendingName">
+                        <p>@swifty99</p>
+                        <p>Bill Bob Jean</p>
+                    </div>
+                </div>
+                <div class="trendingUser">
+                    <div class="trendingAvatar">
+                        <img src="./assets/images/boy3.png" alt="Trending Avatar">
+                    </div>
+                    <div class="trendingName">
+                        <p>@redgreen7</p>
+                        <p>Poppy Coolo</p>
+                    </div>
+                </div>
+                <div class="trendingUser">
+                    <div class="trendingAvatar">
+                        <img src="./assets/images/boy4.png" alt="Trending Avatar">
+                    </div>
+                    <div class="trendingName">
+                        <p>@redgreen7</p>
+                        <p>Poppy Coolo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-
 </body>
 </html>

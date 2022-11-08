@@ -1,208 +1,280 @@
-/* TODO */
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-:root {
-    --blue: #007bff;
-}
 
-body, 
-.nav {
-    display: grid;
+:root {
+    --blue: #2b8bf1;
+    --grey: #ddd;
+    --white: white;
+    --svgWidth: 25px;
+    --full: 100%;
 }
 
 body {
-    grid-template-columns: minmax(210px, 1fr) 4fr;
-    grid-template-rows: 1fr 3fr;
+    display: grid;
+    grid-template: 2fr 5fr / .5fr 2fr;
     grid-template-areas: 
             "sidebar nav"
             "sidebar main"
     ;
-    border: 5px solid black;
+    height: 100vh;
 }
 
-/* NAVBAR */
+
+/* NAV */
 nav {
     grid-area: nav;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: min-content 2fr;
-    padding: 20px 40px;
-
-}
-.top-left {
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    padding: 10px 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1.5fr 2fr;
 }
 
-.top-left,
-.top-right,
-.avatar-container .greeting {
+.search, .profileOptions {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
 }
-
-.top-left {
-    width: 100%;
-    gap: 10px
-}
-
-.top-left div {
-    width: 90%;
-}
-
-.top-left div input {
+#searchBar {
+    width: var(--full);
     height: 30px;
-    width: 90%;
+}
+#searchBar input {
+    width: var(--full);
+    height: var(--full);
+    padding: 0 10px;
     border-radius: 10px;
     border: none;
-    background-color: #e2e8f0;
+    background-color: var(--grey);
 }
-.top-right {
-    justify-content: flex-end;
-    gap: 2.5em;
+.profileOptions {
+    justify-self: end;
+    gap: 40px;
+    margin-right: 50px;
 }
-.top-right h1 {
-    font-size: 1.6em;
-}
-.avatar-container {
+.displayName {
     display: flex;
-    gap: 20px;
-    padding: 0 1em;
-}
-.avatar-container .greeting {
-    justify-content: center;
-    flex-direction: column;
-    line-height: 2em;
-}
-#greet {
-    font-weight: 600;
-}
-#greet-name {
-    font-size: 2.5em;
-}
-.bottom-right {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 20px;
 }
-.bottom-right > button {
-    width: max(30%, 120px);
+.displayName h2 {
+    font-size: 30px;
+}
+.displayName h2:after {
+    content: " (@Billy1234)";
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.buttons button {
+    width: 120px;
     height: 50px;
-    border-radius: min(50px, 10px);
+    border-radius: 25px;
+    background-color: var(--blue);
     border: none;
-    background-color: #007bff;
-    color: white;
-    font-weight: 700;
+    color: var(--white);
     font-size: 20px;
 }
 
+
 /* SIDEBAR */
+
 .sidebar {
     grid-area: sidebar;
     background-color: var(--blue);
-    width: 100%;
-    height: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 4em;
+    gap: 100px;
 }
 
-.title {
-    display: flex;
-    gap: 8px;
-    padding: 1em;
-}
-.title h1 {
-    color: white;
-    align-self: center;
-}
-.function-btns {
+ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
 }
-.function-btns:last-child {
-    margin-top: 1.3em;
-}
-.side-item {
+
+.title li {
+    color: white;
     display: flex;
     align-items: center;
-    gap: 1.5em;
-    padding-left: 1.9em;
-    color: white; 
+    gap: 10px;
 }
-.side-item img {
-    width: 1.8em;
+#sideTitle {
+    font-size: 32px;
+    font-weight: 600;
+}
+.sidebar ul:not(:first-child) li {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
 }
 
-/* 
-    item
-display: flex;
-align-items: center;
-gap: 1.5em;
-padding-left: 1.6em;
-color: white; 
 
-    icon 
-width: 1.8em;
-*/
-
+/* MAIN */
 
 .main {
-    background-color: aliceblue;
     grid-area: main;
-    width: 100%;
-    height: 100%;
-    background-color: #ddd;
+    background-color: var(--grey);
+    height: var(--full);
+    padding: 30px 20px;
+    display: grid;
+    grid-template: repeat(2, 1fr) / 2fr .8fr;
+    grid-template-areas: 
+            "projects announcements"
+            "projects trending"
+    ;
+    gap: 20px;
+   
+} 
+
+.projectContainer {
+    grid-area: projects;
 }
+
+.projects {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 20px;
+
+}
+.card {
+    background-color: white;
+    margin-top: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 80px;
+    border-radius: 20px;
+    border-left: 10px solid gold;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    line-height: 1.6em;
+}
+.cardButtons {
+    display: flex;
+    justify-content: end;
+    gap: 50px;
+}
+
+
+/* MAIN SIDE */
+.announcementsContainer {
+    grid-area: announcements;
+}
+.announcements, .trending {
+    width: var(--full);
+    height: calc(var(--full) - 10%);
+    background-color: var(--white);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.announcements {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+.mainSideItem {
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+.trending {
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.trendingContainer {
+    grid-area: trending;
+}
+
+.trendingUser {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    gap: 20px;
+}
+
+.trendingAvatar img {
+    width: 90px;
+    height: auto;
+}
+.trendingName p {
+    font-size: 20px;
+}
+#pic2 {
+    width: 100px;
+    height: auto;
+}
+
 
 
 
 /* SVG */
-#mag-glass, #bell {
-    width: 1.8em;
-}
-
-#avatar-top {
-    width: max(18%, 50px);
+img {
+    width: var(--svgWidth);
     height: auto;
 }
-#avatar-lrg {
-    width: max(20%, 60px);
+#avatarTop {
+    width: calc(var(--svgWidth) * 2);
     height: auto;
 }
-#dashboard-img {
-    width: 20%;
+#avatarBottom {
+    width: calc(var(--svgWidth) + 70px);
+}
+.sideTitleSVG {
+    width: 50px;
+    height: auto;
+}
+.sideItemSVG {
+    width: 30px;
+    height: auto;
+}
+.cardSVG {
+    width: 30px;
+    height: auto;
 }
 
 
-@media only screen and (max-width: 870px) {
-    .top-right h1 {
-        font-size: 18px;
+
+
+@media only screen and (max-width: 840px) {
+    #searchBar {
+        width: 80%;
+        height: 30%;
     }
-    #greet {
-        font-size: 15px;
-    }
-    #greet-name {
-        font-size: 30px;
-    }
-    .bottom-right > button {
-        height: 40px;
-        font-size: 15px;
-        padding: 10px;
-    }
-    .title h1 {
-        font-size: 19px;
-    }
-    .side-item {
-        padding-left: 20px;
-        font-size: 12px;
+    .profileOptions {
+        gap: 20px;
+        margin-right: 0;
     }
 
+    .displayName h2 {
+        font-size: 20px;
+    }
+    .buttons button {
+        width: 70px;
+        font-size: 16px;
+        border-radius: 10px;
+        justify-content: center;
+        margin-left: 10px;
+    }
 }
